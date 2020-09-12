@@ -1,6 +1,6 @@
 
 .navigationBar {
-  position: fixed;
+  position: relative;
   top:0;
   background-size : 100% 130px;
   background-repeat: no-repeat;
