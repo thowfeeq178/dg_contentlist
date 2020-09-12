@@ -69,7 +69,7 @@ class gridComponent extends React.Component {
   render() {
     return (
       <div className="grid-wrapper">
-        <div >
+        <div style={{position: 'relative', top: '60px'}}>
           <ListComponent list={this.state.listContent}/>
         </div>
       </div>
