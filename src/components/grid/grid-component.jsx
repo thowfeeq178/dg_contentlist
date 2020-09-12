@@ -22,15 +22,39 @@ class gridComponent extends React.Component {
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.pageYOffset;
     if (windowBottom >= docHeight && this.state.current_page < 3) {
-        this.setState({
-          current_page: this.state.current_page + 1,
-          isBottomReached: true,
-        });
+      this.setState((prevState) => {
+        return {
+          current_page: prevState.current_page + 1,
+        };
+    }, () => {
+      this.appendNextPage()
+    });
         console.log("end is reached")
     } else {
         this.setState({
             isBottomReached: false
         });
+    }
+  }
+
+   appendNextPage() {
+     console.log("debugg this.state.current_page",this.state.current_page)
+    if(this.state.current_page > 3) {
+      console.log("all api's are rendered")
+      return
+    } else {
+      console.log("debugg added Data for ",this.state.current_page)
+      let initialDataPage2
+      if(this.state.current_page ===2){
+        const dataPage2 =  require('../../api/CONTENTLISTINGPAGE-PAGE2.json');
+        initialDataPage2 = dataPage2.page["content-items"].content;
+        console.log("debugg1",initialDataPage2)
+      } else {
+        const dataPage3 =  require('../../api/CONTENTLISTINGPAGE-PAGE3.json');
+        initialDataPage2 = dataPage3.page["content-items"].content
+        console.log("debugg",initialDataPage2)
+      }
+      this.setState({listContent:  [...this.state.listContent,...initialDataPage2]})
     }
   }
 
@@ -45,6 +69,7 @@ class gridComponent extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+
 }
 
   render() {
