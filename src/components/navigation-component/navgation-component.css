@@ -1,0 +1,44 @@
+
+.navigationBar {
+  position: fixed;
+  top:0;
+  background-size : 100% 130px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 130px;
+  color: white;
+}
+
+
+@media screen and (min-width: 601px) {
+  div.example {
+    font-size: 8px;
+    margin:0;
+    font-family: 'Titillium Web', sans-serif;
+    position: absolute;
+    left: 100px;
+    font-size:  -webkit-xxx-large ;
+    top: 8px;
+    width: calc(100% - 100px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.example {
+    margin:0;
+    font-family: 'Titillium Web', sans-serif;
+    position: absolute;
+    left: 100px;
+    font-size: xx-large;
+    top: 8px;
+    right:'30px';
+    top: 4vw;
+    width: calc(100% - 150px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
