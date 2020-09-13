@@ -63,7 +63,6 @@ class gridComponent extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
-
 }
 
   render() {

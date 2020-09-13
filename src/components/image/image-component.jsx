@@ -10,13 +10,16 @@ class imageComponent extends Component {
     return (
       <React.Fragment>
         <LazyLoadImage
-        style={{"margin-top": "70px"}}
+        style={{"marginTop": "70px"}}
           alt={"missingPoster"}
           height={"272px"}
           src={this.getImage()}
           width={"182px"} 
         />
-        <div style={{color:"white","margin-top": "24px", "max-width": "172px"}} className="mb-2">{this.props.image.name}</div>
+        <div style={{color:"white","marginTop": "24px", "maxWidth": "172px"}}
+         className="mb-2">
+         {this.props.image.name}
+         </div>
       </React.Fragment>
     );
   }
