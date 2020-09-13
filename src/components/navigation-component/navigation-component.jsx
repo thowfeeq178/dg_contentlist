@@ -26,11 +26,12 @@ class navigationComponent extends React.Component {
             onClick={this.notifyNoBack}
             style ={{width: '30px',position: 'absolute',left:'30px',top:'30px'}}></img>
           </div>
-          <div className="navigationElements" onClick={this.handleSearchClick}>
+          <div className="navigationElements">
             <img className="searchButton" 
             src={SearchIcon} 
             alt="search" 
-            style ={{width: '30px',position: 'absolute',right:'30px',top:'30px'}}></img>
+            onClick={this.props.searchHandler}
+            style ={{width: '30px',position: 'absolute',right:'30px',top:'30px',zIndex:999}}></img>
           </div>
           <div className="navigationElements example">
            {dataPage1.page.title}

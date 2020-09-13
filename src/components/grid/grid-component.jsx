@@ -36,11 +36,9 @@ class gridComponent extends React.Component {
   }
 
    appendNextPage() {
-     console.log("debugg this.state.current_page",this.state.current_page)
     if(this.state.current_page > 3) {
       return
     } else {
-      console.log("debugg added Data for ",this.state.current_page)
       let initialDataPage2
       if(this.state.current_page ===2){
         const dataPage2 =  require('../../api/CONTENTLISTINGPAGE-PAGE2.json');

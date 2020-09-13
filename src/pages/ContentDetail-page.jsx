@@ -3,10 +3,8 @@ import NavBar from '../components/navigation-component/navigation-component';
 import Grid from '../components/grid/grid-component'
 
 class ContentDetailPage extends Component {
-  handleSearch = () => {
-    debugger
-    
-    console.log("search Clisked")
+  handleSearch(){
+    console.log("search Clicked")
   }
   render() {
     return (
